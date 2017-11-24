@@ -1,0 +1,25 @@
+html
+    head
+        title
+            | Hakvelon 2017 >< ninel team
+        style
+            include style.css
+    body
+        img.ninel(
+        src="/ninel.jpg"
+        )
+        .error
+            if error
+                | Error: wrong credential
+        form(action="/", method="POST")
+            label
+                | configuration
+            textarea(id="config", name="config")!= config
+            label
+                | login
+            input(name="login", id="login", type="text")
+            label
+                | password
+            input(name="password", type="password", id="password")
+            button(type="submit")
+                | send configuration
